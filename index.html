@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>Drum Machine</title>
+    <script>
+        function play(str) {
+
+            if (str === "q" || str === "Q") {
+                document.getElementById('display').innerText = "-Q-first";
+            } else if (str === "w" || str === "W") {
+                document.getElementById('display').innerText = "-W-second";
+            } else if (str === "e" || str === "E") {
+                document.getElementById('display').innerText = "-E-third";
+            } else if (str === "a" || str === "A") {
+                document.getElementById('display').innerText = "-A-fourth";
+            } else if (str === "s" || str === "S") {
+                document.getElementById('display').innerText = "-S-fifth";
+            } else if (str === "d" || str === "D") {
+                document.getElementById('display').innerText = "-D-sixth";
+            } else if (str === "z" || str === "Z") {
+                document.getElementById('display').innerText = "-Z-seventh";
+            } else if (str === "x" || str === "X") {
+                document.getElementById('display').innerText = "-X-eight";
+            } else if (str === "c" || str === "C") {
+                document.getElementById('display').innerText = "-C-ninth";
+            }
+
+
+            var audio = document.getElementById(str);
+            audio.play();
+        }
+
+        window.document.onkeyup = function(event) {
+            let keystroke = event.key
+            if (keystroke === "q" || keystroke === "Q") {
+                play("Q");
+            } else if (keystroke === "w" || keystroke === "W") {
+                play("W");
+            } else if (keystroke === "e" || keystroke === "E") {
+                play("E");
+            } else if (keystroke === "a" || keystroke === "A") {
+                play("A");
+            } else if (keystroke === "s" || keystroke === "S") {
+                play("S");
+            } else if (keystroke === "z" || keystroke === "Z") {
+                play("z");
+            } else if (keystroke === "d" || keystroke === "D") {
+                play("D");
+            } else if (keystroke === "x" || keystroke === "x") {
+                play("X");
+            } else if (keystroke === "c" || keystroke === "C") {
+                play("C");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container" id="drum-machine">
+        <h1 class="text-center">Drum Machine</h1>
+        <div class="card my-3">
+            <div class="card-body">
+                <div class="text-center" id="display">NEO</div>
+            </div>
+        </div>
+
+        <button class="drum-pad btn-block btn btn-primary" id="drum-0" onclick="play('Q')">Q
+            <audio src="./clip/-Q-first.wav" class="clip btn btn-primary" id="Q">
+            </button>
+        <button class="drum-pad btn-block btn btn-primary" id="drum-1" onclick="play('W')">W
+            <audio src="./clip/-W-second.wav" class="clip btn btn-primary" id="W">
+            </button>
+
+        <button class="drum-pad btn-block btn btn-primary" id="drum-2" onclick="play('E')">E
+            <audio src="./clip/-E-third.wav" class="clip btn btn-primary" id="E">
+            </button>
+
+        <button class="drum-pad btn-block btn btn-primary" id="drum-3" onclick="play('A')">A
+            <audio src="./clip/-A-fourth.wav" class="clip btn btn-primary" id="A">
+            </button>
+
+        <button class="drum-pad btn-block btn btn-primary" id="drum-4" onclick="play('S')">S
+            <audio src="./clip/-S-fifth.wav" class="clip btn btn-primary" id="S">
+            </button>
+
+        <button class="drum-pad btn-block btn btn-primary" id="drum-5" onclick="play('D')">D
+            <audio src="./clip/-D-sixth.wav" class="clip btn btn-primary" id="D">
+            </button>
+
+        <button class="drum-pad btn-block btn btn-primary" id="drum-6" onclick="play('Z')">Z
+            <audio src="./clip/-Z-seventh.wav" class="clip btn btn-primary" id="Z">
+            </button>
+
+        <button class="drum-pad btn-block btn btn-primary" id="drum-7" onclick="play('X')">X
+            <audio src="./clip/-X-eight.wav" class="clip btn btn-primary" id="X">
+            </button>
+
+        <button class="drum-pad btn-block btn btn-primary" id="drum-8" onclick="play('C')">C
+            <audio src="./clip/-C-ninth.wav" class="clip btn btn-primary" id="C">
+            </button>
+    </div>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
